@@ -13,6 +13,11 @@ const users = [
     {uid : 105689 , name : "Yatri", att : 79 , total_sub : 12 , bouns : 25 }
 ];
 
+app.get("/users", (req, res) => {
+  res.status(200).json(users);
+});
+
+
 app.get("/users/:id", (req, res) => {
   const userId = Number(req.params.id);
   const user = users.find((u) => u.uid === userId);
